@@ -1,12 +1,12 @@
 * {
     text-decoration: none;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 .navbar {
     background-color: blue;
     font-family: Calibri, sans-serif;
-    padding: 10px 50px;
+    padding: 5px 50px;
 }
 
 .navdiv {
@@ -20,10 +20,10 @@
     font-weight: 600;
     color: white;
 }
-
+0
 ul {
     margin: 0;
-    padding: 0;
+    padding:0;
 }
 
 li {
