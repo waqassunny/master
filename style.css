@@ -1,84 +1,247 @@
 * {
-    text-decoration: none;
-    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fb;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-    background-color: blue;
-    font-family: Calibri, sans-serif;
-    padding: 5px 50px;
+    width: 100%;
+    background: linear-gradient(135deg, #172554, #312e81, #4f46e5);
+    padding: 18px 6%;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
 .navdiv {
+    max-width: 1400px;
+    margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .logo a {
-    font-size: 35px;
-    font-weight: 600;
+    text-decoration: none;
     color: white;
-}
-0
-ul {
-    margin: 0;
-    padding:0;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transition: 0.3s;
 }
 
-li {
+.logo i {
+    font-size: 34px;
+}
+
+.logo span {
+    color: #facc15;
+}
+
+.logo a:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MENU
+========================= */
+
+.navdiv ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     list-style: none;
-    display: inline-block;
 }
 
-li a {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: 30px;
+.navdiv ul li {
+    list-style: none;
 }
 
-button {
-    background-color: rgb(26, 124, 42);
-    margin-left: 10px;
-    border-radius: 15px;
-    padding: 10px;
-    width: 100px;
-    border: none;
-}
+/* =========================
+   MENU LINKS
+========================= */
 
-button a {
-    color: white;
-    font-weight: bold;
-    font-size: 12px;
-}
-.fa-envelope {
-    margin-right: 8px;
-}
+.navdiv ul li a {
+    position: relative;
 
-.fa-clock{margin-right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-}
+    padding: 10px 13px;
 
-.fa-ranking-star{margin-right: 8px;    }
-
-li a {
     color: white;
     text-decoration: none;
-    position: relative;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
 }
 
-li a::after {
+/* Icons */
+
+.navdiv ul li a i {
+    font-size: 15px;
+    color: #facc15;
+
+    transition: 0.3s;
+}
+
+/* Hover */
+
+.navdiv ul li a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.navdiv ul li a:hover i {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Animated underline */
+
+.navdiv ul li a:not(.signin):not(.signout)::after {
     content: "";
+
     position: absolute;
+    left: 50%;
+    bottom: 3px;
+
     width: 0;
     height: 2px;
-    background-color: yellow;
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease;
+
+    background: #facc15;
+
+    transform: translateX(-50%);
+
+    transition: 0.3s;
 }
 
-li a:hover::after {
-    width: 100%;
+.navdiv ul li a:not(.signin):not(.signout):hover::after {
+    width: 70%;
+}
+
+/* =========================
+   SIGN IN
+========================= */
+
+.signin {
+    background: white;
+    color: #312e81 !important;
+
+    padding: 11px 20px !important;
+
+    border-radius: 25px !important;
+
+    font-weight: 600 !important;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.signin i {
+    color: #312e81 !important;
+}
+
+.signin:hover {
+    background: #facc15 !important;
+    color: #172554 !important;
+
+    transform: translateY(-3px) !important;
+}
+
+/* =========================
+   SIGN OUT
+========================= */
+
+.signout {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    padding: 10px 18px !important;
+
+    border-radius: 25px !important;
+
+    font-weight: 600 !important;
+}
+
+.signout:hover {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1100px) {
+
+    .navdiv {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navdiv ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .logo a {
+        font-size: 26px;
+    }
+
+    .navdiv ul {
+        width: 100%;
+
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .navdiv ul li {
+        width: 100%;
+    }
+
+    .navdiv ul li a {
+        justify-content: center;
+
+        width: 100%;
+
+        padding: 12px;
+    }
+
+    .signin,
+    .signout {
+        justify-content: center;
+    }
 }
